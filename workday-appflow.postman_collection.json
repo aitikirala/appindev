@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "b342df59-7264-4f91-8408-89f19a10e595",
+		"name": "workday-appflow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post-Access Token(GET) PTG",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ycvqcicp74ygqzlhths77uhiqyfoi6zvfd45ecsknngqzkpchkfc5qfo3nk4njos1tjvajfii9thecao3ycbv68tgez4rgpv3xo",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Njg2NDE4YjgtMDg4ZS00NzIxLWIzNDUtNmY2Y2Y3MTcyMThm",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "grant_type=refresh_token&refresh_token=q330zdcm24bgece5ies47n2pqdmt4v63lk9g70x3c50pt7ezpgz7f6tom887vm64yfnzoostzn9q5nk0ulfm39byig4wl121pfm",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://wd2-impl-services1.workday.com/ccx/oauth2/peopletech_gms1/token",
+					"protocol": "https",
+					"host": [
+						"wd2-impl-services1",
+						"workday",
+						"com"
+					],
+					"path": [
+						"ccx",
+						"oauth2",
+						"peopletech_gms1",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieves a collection of workers and current staffing information",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "4y3t8kg2e4rx631ilcu23u7zh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/workers",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"workers"
+					]
+				},
+				"description": "Retrieves a collection of workers and current staffing information.\n\nSecured by: Worker Data: Public Worker Reports, Self-Service: Current Staffing Information\n\nScope: Staffing"
+			},
+			"response": [
+				{
+					"name": "Successful response. A successful response can return no matched data.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workers?limit=-78739061&offset=-78739061&search=incididunt aliquip velit officia",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-78739061"
+								},
+								{
+									"key": "offset",
+									"value": "-78739061"
+								},
+								{
+									"key": "search",
+									"value": "incididunt aliquip velit officia"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"data\": [\n    {\n      \"primaryJob\": {\n        \"businessTitle\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"supervisoryOrganization\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"jobType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"jobProfile\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"location\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workSpace\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"descriptor\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"person\": {\n        \"phone\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"email\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"additionalJobs\": [\n        {\n          \"businessTitle\": \"Lorem ipsum dolor sit amet, cum choro singulis consectetuer ut, ubique iisque contentiones ex duo. Quo lorem etiam eu.\",\n          \"supervisoryOrganization\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobProfile\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"location\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"workSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"descriptor\": \"Lorem ipsum dolor sit ame\",\n          \"id\": \"occaecat do\"\n        },\n        {\n          \"businessTitle\": \"Lorem ipsum dolor sit amet, cum choro singulis consectetuer ut, ubique iisque contentiones ex duo. Quo lorem etiam eu.\",\n          \"supervisoryOrganization\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobProfile\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"location\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"workSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"descriptor\": \"Lorem ipsum dolor sit ame\",\n          \"id\": \"esse minim aliquip nulla pariatur\"\n        }\n      ],\n      \"id\": \"ex dolore laborum\",\n      \"descriptor\": \"Lorem ipsum dolor sit ame\"\n    },\n    {\n      \"primaryJob\": {\n        \"businessTitle\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"supervisoryOrganization\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"jobType\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"jobProfile\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"location\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"workSpace\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"descriptor\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"person\": {\n        \"phone\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"email\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"id\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"additionalJobs\": [\n        {\n          \"businessTitle\": \"Lorem ipsum dolor sit amet, cum choro singulis consectetuer ut, ubique iisque contentiones ex duo. Quo lorem etiam eu.\",\n          \"supervisoryOrganization\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobProfile\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"location\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"workSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"descriptor\": \"Lorem ipsum dolor sit ame\",\n          \"id\": \"esse nostrud\"\n        },\n        {\n          \"businessTitle\": \"Lorem ipsum dolor sit amet, cum choro singulis consectetuer ut, ubique iisque contentiones ex duo. Quo lorem etiam eu.\",\n          \"supervisoryOrganization\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobType\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"jobProfile\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"location\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"workSpace\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"descriptor\": \"Lorem ipsum dolor sit ame\",\n          \"id\": \"consequat deserunt\"\n        }\n      ],\n      \"id\": \"velit laboris dolor\",\n      \"descriptor\": \"Lorem ipsum dolor sit ame\"\n    }\n  ],\n  \"total\": 29821139\n}"
+				},
+				{
+					"name": "Invalid request. (https://community.workday.com/rest/error-messages)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workers?limit=-78739061&offset=-78739061&search=incididunt aliquip velit officia",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-78739061"
+								},
+								{
+									"key": "offset",
+									"value": "-78739061"
+								},
+								{
+									"key": "search",
+									"value": "incididunt aliquip velit officia"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"eiusmod\",\n  \"errors\": [\n    {\n      \"error\": \"ex exercitation occaecat in\",\n      \"code\": \"amet\",\n      \"field\": \"voluptate non irure\",\n      \"path\": \"ex commodo\"\n    },\n    {\n      \"error\": \"exercitation Ut proident\",\n      \"code\": \"minim aute officia cupidatat eu\",\n      \"field\": \"quis\",\n      \"path\": \"ullamco est laborum anim culpa\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Invalid resource or operation. (https://community.workday.com/rest/error-messages)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workers?limit=-78739061&offset=-78739061&search=incididunt aliquip velit officia",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-78739061"
+								},
+								{
+									"key": "offset",
+									"value": "-78739061"
+								},
+								{
+									"key": "search",
+									"value": "incididunt aliquip velit officia"
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"et esse nisi Duis\",\n  \"errors\": [\n    {\n      \"error\": \"commodo ex \",\n      \"code\": \"veniam ad consectetur\",\n      \"field\": \"culpa laborum cillum\",\n      \"path\": \"dolor dolore deserun\"\n    },\n    {\n      \"error\": \"ex non Duis\",\n      \"code\": \"mollit sunt\",\n      \"field\": \"laborum sint Lor\",\n      \"path\": \"irure minim ea incididunt cillum\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "User has insufficient permissions. (https://community.workday.com/rest/error-messages)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workers?limit=-78739061&offset=-78739061&search=incididunt aliquip velit officia",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-78739061"
+								},
+								{
+									"key": "offset",
+									"value": "-78739061"
+								},
+								{
+									"key": "search",
+									"value": "incididunt aliquip velit officia"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"et esse nisi Duis\",\n  \"errors\": [\n    {\n      \"error\": \"commodo ex \",\n      \"code\": \"veniam ad consectetur\",\n      \"field\": \"culpa laborum cillum\",\n      \"path\": \"dolor dolore deserun\"\n    },\n    {\n      \"error\": \"ex non Duis\",\n      \"code\": \"mollit sunt\",\n      \"field\": \"laborum sint Lor\",\n      \"path\": \"irure minim ea incididunt cillum\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "Resource not found. (https://community.workday.com/rest/error-messages)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workers?limit=-78739061&offset=-78739061&search=incididunt aliquip velit officia",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-78739061"
+								},
+								{
+									"key": "offset",
+									"value": "-78739061"
+								},
+								{
+									"key": "search",
+									"value": "incididunt aliquip velit officia"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"et esse nisi Duis\",\n  \"errors\": [\n    {\n      \"error\": \"commodo ex \",\n      \"code\": \"veniam ad consectetur\",\n      \"field\": \"culpa laborum cillum\",\n      \"path\": \"dolor dolore deserun\"\n    },\n    {\n      \"error\": \"ex non Duis\",\n      \"code\": \"mollit sunt\",\n      \"field\": \"laborum sint Lor\",\n      \"path\": \"irure minim ea incididunt cillum\"\n    }\n  ]\n}"
+				},
+				{
+					"name": "An error occurred.",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/workers?limit=-78739061&offset=-78739061&search=incididunt aliquip velit officia",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"workers"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "-78739061"
+								},
+								{
+									"key": "offset",
+									"value": "-78739061"
+								},
+								{
+									"key": "search",
+									"value": "incididunt aliquip velit officia"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"dolor adipisicing dol\",\n  \"code\": \"in esse tempo\",\n  \"field\": \"est\",\n  \"path\": \"in quis Ut dolor\"\n}"
+				}
+			]
+		}
+	]
+}
